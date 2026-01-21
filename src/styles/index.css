@@ -1,0 +1,15 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+
+.ecotemp-logo-img {
+    height: 50px;
+    width: 200px;
+}
+
+.ecotemp-logo-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
