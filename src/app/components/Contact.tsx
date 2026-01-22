@@ -51,7 +51,7 @@ export function Contact() {
     }    
 
     //back end validation and email sender - validates phone number
-    const response = await fetch("https://ecotemp-instance.azurewebsites.net/api/service-requests", {
+    await fetch("https://ecotemp-instance.azurewebsites.net/api/service-requests", {
       method: "POST",
       mode: "cors",
       body: JSON.stringify(data),
@@ -150,7 +150,7 @@ export function Contact() {
                 />
               </div>
               <Button type="submit" size="lg" className="w-full" disabled={loading}>
-                Send Message
+                Submit
               </Button>
             </form>
           </div>

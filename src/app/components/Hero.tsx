@@ -46,7 +46,7 @@ export function Hero() {
                 onClick={scrollToContact}
                 className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-6 h-auto shadow-xl"
               >
-                Get Free Quote
+                Contact Us
               </Button>
             </div>
 
