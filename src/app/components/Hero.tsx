@@ -1,6 +1,7 @@
 import { Button } from '@/app/components/ui/button';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import { MapPin, Award, Phone } from 'lucide-react';
+import gauges from '../../../gauges.jpg'
 
 export function Hero() {
   const scrollToContact = () => {
@@ -79,7 +80,7 @@ export function Hero() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-transparent z-10"></div>
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1761679296910-0a0078baa1ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBob21lJTIwY29tZm9ydCUyMGludGVyaW9yfGVufDF8fHx8MTc2OTAwNzY4Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src={gauges}
                 alt="Modern Home Comfort"
                 className="w-full h-[600px] object-cover"
               />
