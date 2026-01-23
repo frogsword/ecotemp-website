@@ -33,7 +33,7 @@ export function Hero() {
           {/* Text Content */}
           <div className="text-white">
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-              Your Comfort is Our <span className="text-cyan-300">Mission</span>
+              Your Comfort is Our <span className="text-cyan-300">Purpose</span>
             </h2>
             
             <p className="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed">
@@ -48,6 +48,14 @@ export function Hero() {
                 className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-6 h-auto shadow-xl"
               >
                 Contact Us
+              </Button>
+
+              <Button 
+                size="lg" 
+                onClick={scrollToContact}
+                className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-6 h-auto shadow-xl"
+              >
+                Get A Free Quote
               </Button>
             </div>
 

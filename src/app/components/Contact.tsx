@@ -195,7 +195,7 @@ export function Contact() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg">Monday - Friday: 8am - 6pm</p>
+                <p className="text-lg">Monday - Friday: 8am - 5pm</p>
               </CardContent>
             </Card>
           </div>
