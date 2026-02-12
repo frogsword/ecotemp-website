@@ -48,7 +48,7 @@ export function Header() {
               <Phone className="w-5 h-5 mr-2" />
               <span>(417) 576-2152</span>
             </a>
-            <Button onClick={() => scrollToSection('contact')}>Get Quote</Button>
+            <Button onClick={() => scrollToSection('contact')}>Contact Us</Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -76,11 +76,11 @@ export function Header() {
               <button onClick={() => scrollToSection('contact')} className="text-left hover:text-blue-600 transition-colors">
                 Contact
               </button>
-              <a href="tel:1-800-COOL-AIR" className="flex items-center text-blue-600">
+              <a href="tel:417-576-2152" className="flex items-center text-blue-600">
                 <Phone className="w-5 h-5 mr-2" />
                 <span>(417) 576-2152</span>
               </a>
-              <Button onClick={() => scrollToSection('contact')} className="w-full">Get Quote</Button>
+              <Button onClick={() => scrollToSection('contact')} className="w-full">Contact Us</Button>
             </nav>
           </div>
         )}

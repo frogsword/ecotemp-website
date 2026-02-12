@@ -1,6 +1,7 @@
 import { Button } from '@/app/components/ui/button';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import { MapPin, Award, Phone } from 'lucide-react';
+import gauges from '../../../gauges.jpg'
 
 export function Hero() {
   const scrollToContact = () => {
@@ -32,7 +33,7 @@ export function Hero() {
           {/* Text Content */}
           <div className="text-white">
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-              Your Comfort is Our <span className="text-cyan-300">Mission</span>
+              Your Comfort is Our <span className="text-cyan-300">Purpose</span>
             </h2>
             
             <p className="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed">
@@ -46,7 +47,15 @@ export function Hero() {
                 onClick={scrollToContact}
                 className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-6 h-auto shadow-xl"
               >
-                Get Free Quote
+                Contact Us
+              </Button>
+
+              <Button 
+                size="lg" 
+                onClick={scrollToContact}
+                className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-6 h-auto shadow-xl"
+              >
+                Get A Free Quote
               </Button>
             </div>
 
@@ -79,7 +88,7 @@ export function Hero() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-transparent z-10"></div>
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1761679296910-0a0078baa1ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBob21lJTIwY29tZm9ydCUyMGludGVyaW9yfGVufDF8fHx8MTc2OTAwNzY4Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                src={gauges}
                 alt="Modern Home Comfort"
                 className="w-full h-[600px] object-cover"
               />

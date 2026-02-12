@@ -15,16 +15,55 @@ import {
 export function Contact() {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
+    phone: '',
     service: '',
     message: '',
   });
+  const [err, setErr] = useState("")
+  const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    setLoading(true)
     e.preventDefault();
     // Handle form submission
+    const data = {
+      name: formData.name,
+      phoneNumber: formData.phone,
+      service: formData.service,
+      description: formData.message
+    }
+
+    //front end validation
+    if (formData.name.length < 2 || formData.name.length > 20) {
+      setErr("Please enter a valid name.")
+      setLoading(false)
+      return
+    }
+    if (formData.phone.length < 10 || formData.phone.length > 15) {
+      setErr("Please enter a phone number.")
+      setLoading(false)
+      return
+    }
+    if (formData.service == "") {
+      setErr("Please select a service.")
+      setLoading(false)
+      return
+    }    
+
+    //back end validation and email sender - validates phone number
+    await fetch("https://ecotemp-instance.azurewebsites.net/api/service-requests", {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+
     alert('Thank you for your message! We will contact you soon.');
-    setFormData({ name: '', email: '', service: '', message: '' });
+    setFormData({ name: '', phone: '', service: '', message: '' });
+    setErr("")
+    setLoading(false)
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -48,6 +87,7 @@ export function Contact() {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>
+            <p style={{color: 'red'}}>{err}</p>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm mb-2">
@@ -64,16 +104,16 @@ export function Contact() {
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm mb-2">
-                  Email *
+                  Phone Number *
                 </label>
                 <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
+                  id="phone"
+                  name="phone"
+                  type="phone"
+                  value={formData.phone}
                   onChange={handleChange}
                   required
-                  placeholder="your@email.com"
+                  placeholder="417-555-5555"
                 />
               </div>
               <div>
@@ -88,7 +128,7 @@ export function Contact() {
                     <SelectItem value="air-conditioning">Air Conditioning</SelectItem>
                     <SelectItem value="heating">Heating Systems</SelectItem>
                     <SelectItem value="air-quality">Air Quality</SelectItem>
-                    <SelectItem value="maintenance">Maintenance Plan</SelectItem>
+                    <SelectItem value="maintenance">Maintenance</SelectItem>
                     <SelectItem value="replacement">System Replacement</SelectItem>
                     <SelectItem value="repair">Repair Service</SelectItem>
                     <SelectItem value="consultation">Free Quote</SelectItem>
@@ -109,8 +149,8 @@ export function Contact() {
                   rows={5}
                 />
               </div>
-              <Button type="submit" size="lg" className="w-full">
-                Send Message
+              <Button type="submit" size="lg" className="w-full" disabled={loading}>
+                Submit
               </Button>
             </form>
           </div>
@@ -155,7 +195,7 @@ export function Contact() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-lg">Monday - Friday: 8am - 6pm</p>
+                <p className="text-lg">Monday - Friday: 8am - 5pm</p>
               </CardContent>
             </Card>
           </div>
