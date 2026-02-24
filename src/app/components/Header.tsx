@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Clock3 } from 'lucide-react';
 import { Button } from '@/app/components/ui/button';
-import ecotempLogo from '../../../ecotemp-logo.png'
+import ecotempLogo from '../../../ecotemp-logo.png';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -15,72 +15,78 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/60 bg-white/[0.92] backdrop-blur-lg">
+      <div className="hidden border-b border-slate-200/70 bg-slate-50/90 md:block">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 text-sm text-slate-700 sm:px-6 lg:px-8">
+          <p className="flex items-center gap-2">
+            <Clock3 className="h-4 w-4 text-teal-700" />
+            Monday-Friday, 8:00 AM-5:00 PM
+          </p>
+          <a href="tel:417-576-2152" className="font-semibold text-teal-700 hover:text-teal-800">
+            Call for fast scheduling: (417) 576-2152
+          </a>
+        </div>
+      </div>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
-            {/* <h1 className="text-2xl font-bold text-blue-600">EcoTemp Heating and Air</h1> */}
-            <a href="/" onClick={() => window.scrollTo(0, 0)}>
-              <img className="ecotemp-logo-img" src={ecotempLogo} />
+            <a href="#home" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="EcoTemp home">
+              <img className="ecotemp-logo-img" src={ecotempLogo} alt="EcoTemp Mechanical logo" />
             </a>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('home')} className="hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('home')} className="font-medium text-slate-700 transition-colors hover:text-teal-700">
               Home
             </button>
-            <button onClick={() => scrollToSection('services')} className="hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('services')} className="font-medium text-slate-700 transition-colors hover:text-teal-700">
               Services
             </button>
-            <button onClick={() => scrollToSection('about')} className="hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('about')} className="font-medium text-slate-700 transition-colors hover:text-teal-700">
               About
             </button>
-            <button onClick={() => scrollToSection('contact')} className="hover:text-blue-600 transition-colors">
+            <button onClick={() => scrollToSection('contact')} className="font-medium text-slate-700 transition-colors hover:text-teal-700">
               Contact
             </button>
           </nav>
 
-          {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="tel:417-576-2152" className="flex items-center text-blue-600">
-              <Phone className="w-5 h-5 mr-2" />
+            <a href="tel:417-576-2152" className="flex items-center rounded-full bg-teal-50 px-4 py-2 font-semibold text-teal-700 transition-colors hover:bg-teal-100">
+              <Phone className="mr-2 h-4 w-4" />
               <span>(417) 576-2152</span>
             </a>
-            <Button onClick={() => scrollToSection('contact')}>Contact Us</Button>
+            <Button onClick={() => scrollToSection('contact')} className="h-10 rounded-full px-6">
+              Book Service
+            </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <button className="rounded-md p-1 text-slate-700 md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden pb-4">
-            <nav className="flex flex-col space-y-4">
-              <button onClick={() => scrollToSection('home')} className="text-left hover:text-blue-600 transition-colors">
+          <div className="border-t border-slate-200 py-4 md:hidden">
+            <nav className="flex flex-col space-y-4 rounded-xl bg-slate-50 p-4">
+              <button onClick={() => scrollToSection('home')} className="text-left font-medium text-slate-700 transition-colors hover:text-teal-700">
                 Home
               </button>
-              <button onClick={() => scrollToSection('services')} className="text-left hover:text-blue-600 transition-colors">
+              <button onClick={() => scrollToSection('services')} className="text-left font-medium text-slate-700 transition-colors hover:text-teal-700">
                 Services
               </button>
-              <button onClick={() => scrollToSection('about')} className="text-left hover:text-blue-600 transition-colors">
+              <button onClick={() => scrollToSection('about')} className="text-left font-medium text-slate-700 transition-colors hover:text-teal-700">
                 About
               </button>
-              <button onClick={() => scrollToSection('contact')} className="text-left hover:text-blue-600 transition-colors">
+              <button onClick={() => scrollToSection('contact')} className="text-left font-medium text-slate-700 transition-colors hover:text-teal-700">
                 Contact
               </button>
-              <a href="tel:417-576-2152" className="flex items-center text-blue-600">
-                <Phone className="w-5 h-5 mr-2" />
+              <a href="tel:417-576-2152" className="flex items-center font-semibold text-teal-700">
+                <Phone className="mr-2 h-4 w-4" />
                 <span>(417) 576-2152</span>
               </a>
-              <Button onClick={() => scrollToSection('contact')} className="w-full">Contact Us</Button>
+              <Button onClick={() => scrollToSection('contact')} className="w-full rounded-full">
+                Book Service
+              </Button>
             </nav>
           </div>
         )}
