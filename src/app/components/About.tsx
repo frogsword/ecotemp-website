@@ -43,7 +43,6 @@ export function About() {
               Whether you need installation, repair, or maintenance, we're here to help.
             </p>
             <p className="text-lg font-semibold text-blue-600 mb-8">
-              Authorized American Standard Dealer
             </p>
 
             <div className="space-y-3">

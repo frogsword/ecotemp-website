@@ -72,7 +72,7 @@ export function Hero() {
                 <Award className="w-6 h-6 text-cyan-300 flex-shrink-0 mt-1" />
                 <div>
                   <p className="font-semibold mb-1">Authorized Dealer</p>
-                  <p className="text-sm text-blue-100">We are an authorized American Standard dealer</p>
+                  <p className="text-sm text-blue-100"></p>
                 </div>
               </div>
             </div>

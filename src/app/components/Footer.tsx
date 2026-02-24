@@ -14,7 +14,6 @@ export function Footer() {
               Southwest Missouri's trusted partner for all heating, cooling, and air quality needs.
             </p>
             <p className="text-sm text-gray-500">
-              Authorized American Standard Dealer
             </p>
             <p className="text-sm text-gray-500 mt-2">
               Serving Springfield, Missouri and Surrounding Areas
