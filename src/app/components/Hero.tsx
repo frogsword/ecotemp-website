@@ -12,13 +12,13 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative overflow-hidden bg-slate-900 pt-28 text-white md:pt-32">
+    <section id="home" className="relative overflow-hidden bg-slate-900 pt-40 pb-24 text-white md:pt-52 md:pb-28">
       <div className="absolute inset-0">
         <div className="h-full w-full bg-[radial-gradient(circle_at_top_right,_rgba(20,184,166,0.35),_transparent_48%),radial-gradient(circle_at_left,_rgba(245,158,11,0.2),_transparent_45%),linear-gradient(145deg,_#0f172a,_#0b1320_45%,_#111827)]" />
       </div>
       <div className="absolute inset-0 opacity-20 [background:linear-gradient(90deg,transparent_24px,rgba(255,255,255,0.06)_25px,rgba(255,255,255,0.06)_26px,transparent_27px),linear-gradient(transparent_24px,rgba(255,255,255,0.06)_25px,rgba(255,255,255,0.06)_26px,transparent_27px)] [background-size:72px_72px]" />
-      <div className="relative mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-14 lg:grid-cols-[1fr_1fr]">
           <div className="text-white">
             <span className="mb-5 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1 text-sm font-semibold text-teal-200">
               Springfield and Southwest Missouri HVAC
@@ -62,10 +62,10 @@ export function Hero() {
               </div>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-md lg:max-w-sm xl:max-w-md">
+          <div className="relative mx-auto w-full max-w-md lg:max-w-lg xl:max-w-xl">
             <div className="absolute -left-5 -top-5 h-24 w-24 rounded-full bg-amber-400/30 blur-2xl" />
             <div className="absolute -bottom-5 -right-4 h-24 w-24 rounded-full bg-teal-400/30 blur-2xl" />
-            <div className="relative h-[360px] overflow-hidden rounded-3xl border border-white/20 shadow-2xl sm:h-[420px]">
+            <div className="relative h-[420px] overflow-hidden rounded-3xl border border-white/20 shadow-2xl sm:h-[500px] lg:h-[560px]">
               <ImageWithFallback
                 src={gauges}
                 alt="HVAC diagnostic gauges"

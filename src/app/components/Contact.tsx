@@ -34,10 +34,6 @@ export function Contact() {
       setError('Please select a service.');
       return;
     }
-    if (formData.message.trim().length < 8) {
-      setError('Please provide a few details about your request.');
-      return;
-    }
 
     const payload = {
       name: formData.name.trim(),
